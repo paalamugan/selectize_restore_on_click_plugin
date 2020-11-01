@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Selectize.js Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.min.css" integrity="sha512-87wkTHUArAnTBwQ5XL6+G68i54R3TXYDZoXewRsdhIv/ztcEr2Z1Mrk+aXBCKOZUtih0XWiBhXv3/bWjHTL2Bw==" crossorigin="anonymous" />
+    <style type="text/css" media="screen">
+      body {
+        width: 50%;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+    <body>
+    <div id="wrapper">
+      <h1>Selectize.js</h1>
+      <div class="demo">
+        <h2>API</h2>
+        <p>Examples of how to interact with the clickable edit option, Below search box click any one of the selected item.</p>
+        <div class="control-group">
+          <label for="select-tools">Tools:</label>
+          <select id="select-tools" multiple placeholder="Pick a tool..."></select>
+        </div>
+        <div class="buttons">
+          <!-- <input type="button" value="clear()" id="button-clear">
+          <input type="button" value="clearOptions()" id="button-clearoptions">
+          <input type="button" value="addOption()" id="button-addoption">
+          <input type="button" value="addItem()" id="button-additem">
+          <input type="button" value="setValue()" id="button-setvalue"> -->
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha512-hgoywpb1bcTi1B5kKwogCTG4cvTzDmFCJZWjit4ZimDIgXu7Dwsreq8GOQjKVUxFwxCWkLcJN5EN0W0aOngs4g==" crossorigin="anonymous"></script>
+        <script src="/selectize_restore_on_click.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+        var $select = $('#select-tools').selectize({
+          maxItems: null,
+          valueField: 'id',
+          labelField: 'title',
+          searchField: 'title',
+          plugins: ['restore_on_click'],
+          options: [
+            {id: 1, title: 'Spectrometer', url: 'http://en.wikipedia.org/wiki/Spectrometers'},
+            {id: 2, title: 'Star Chart', url: 'http://en.wikipedia.org/wiki/Star_chart'},
+            {id: 3, title: 'Electrical Tape', url: 'http://en.wikipedia.org/wiki/Electrical_tape'}
+          ],
+          create: false
+        });
+
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        var control = $select[0].selectize;
+        control.addItem(1);
+        control.addItem(2);
+        control.addItem(3);
+        // $('#button-clear').on('click', function() {
+        //   control.clear();
+        // });
+
+        // $('#button-clearoptions').on('click', function() {
+        //   control.clearOptions();
+        // });
+
+        // $('#button-addoption').on('click', function() {
+        //   control.addOption({
+        //     id: 4,
+        //     title: 'Something New',
+        //     url: 'http://google.com'
+        //   });
+        // });
+
+        // $('#button-additem').on('click', function() {
+        //   control.addItem(2);
+        // });
+
+        // $('#button-setvalue').on('click', function() {
+        //   control.setValue([2, 3]);
+        // });
+
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
