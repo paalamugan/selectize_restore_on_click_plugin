@@ -49,7 +49,12 @@
             {id: 2, title: 'Star Chart', url: 'http://en.wikipedia.org/wiki/Star_chart'},
             {id: 3, title: 'Electrical Tape', url: 'http://en.wikipedia.org/wiki/Electrical_tape'}
           ],
-          create: false
+          create: function(input) {
+              return {
+                  title: input,
+                  id: input
+              }
+          }
         });
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
